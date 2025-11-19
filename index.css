@@ -1,0 +1,105 @@
+/* Import Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
+
+/* Import Tailwind CSS utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal global styles for the app
+   - basic reset and font fallback
+   - ensure root fills viewport
+   - Leaflet container sizing and simple marker fix
+*/
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+/* Ensure map container gets height when used
+   Adjust in components if you want a different default */
+.leaflet-container {
+  width: 100%;
+  height: 400px;
+}
+
+/* Keep custom marker icon container transparent */
+.custom-icon {
+  background: transparent;
+  border: none;
+}
+
+/* Custom Paniai color palette */
+:root {
+  --paniai-50: #f0f9ff;
+  --paniai-100: #e0f2fe;
+  --paniai-500: #0ea5e9;
+  --paniai-600: #0284c7;
+  --paniai-700: #0369a1;
+  --paniai-800: #075985;
+  --paniai-900: #0c4a6e;
+}
+
+.bg-paniai-50 { background-color: var(--paniai-50); }
+.bg-paniai-100 { background-color: var(--paniai-100); }
+.bg-paniai-500 { background-color: var(--paniai-500); }
+.bg-paniai-600 { background-color: var(--paniai-600); }
+.bg-paniai-700 { background-color: var(--paniai-700); }
+.bg-paniai-800 { background-color: var(--paniai-800); }
+.bg-paniai-900 { background-color: var(--paniai-900); }
+
+.text-paniai-50 { color: var(--paniai-50); }
+.text-paniai-100 { color: var(--paniai-100); }
+.text-paniai-500 { color: var(--paniai-500); }
+.text-paniai-600 { color: var(--paniai-600); }
+.text-paniai-700 { color: var(--paniai-700); }
+.text-paniai-800 { color: var(--paniai-800); }
+.text-paniai-900 { color: var(--paniai-900); }
+
+.border-paniai-500 { border-color: var(--paniai-500); }
+.border-paniai-600 { border-color: var(--paniai-600); }
+.border-paniai-800 { border-color: var(--paniai-800); }
+
+.ring-paniai-500 { --tw-ring-color: var(--paniai-500); }
+
+.hover\:bg-paniai-50:hover { background-color: var(--paniai-50); }
+.hover\:bg-paniai-100:hover { background-color: var(--paniai-100); }
+.hover\:bg-paniai-600:hover { background-color: var(--paniai-600); }
+.hover\:bg-paniai-700:hover { background-color: var(--paniai-700); }
+.hover\:bg-paniai-800:hover { background-color: var(--paniai-800); }
+
+.hover\:text-paniai-600:hover { color: var(--paniai-600); }
+.hover\:text-paniai-800:hover { color: var(--paniai-800); }
+
+/* Animation utilities */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
